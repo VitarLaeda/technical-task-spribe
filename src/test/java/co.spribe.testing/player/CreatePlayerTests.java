@@ -2,6 +2,8 @@ package co.spribe.testing.player;
 
 import co.spribe.testing.TestBase;
 import co.spribe.testing.dto.CreatePlayerDTO;
+import io.qameta.allure.Description;
+import io.qameta.allure.Issue;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -10,10 +12,11 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
-
+@Issue("Doesn't work. In my opinion here should be POST request with authorization")
 public class CreatePlayerTests extends TestBase {
 
     @Test(dataProviderClass = PlayerDataProvider.class, dataProvider = "getPlayers")
+    @Description("In my opinion here should be POST request")
     public void testCreatePlayerValidEditor(CreatePlayerDTO player) {
 
         RequestSpecification request = given().auth().preemptive().basic("Test", "testSupervisor")

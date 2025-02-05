@@ -3,6 +3,7 @@ package co.spribe.testing.player;
 import co.spribe.testing.TestBase;
 import co.spribe.testing.dto.CreatePlayerDTO;
 import co.spribe.testing.dto.DeletePlayerRequestDTO;
+import io.qameta.allure.Issue;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
@@ -11,6 +12,7 @@ import static io.restassured.RestAssured.when;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+@Issue("Delete player can't be checked, blocked by Create player API")
 public class DeletePlayerTests extends TestBase {
 
     @Test(dataProviderClass = PlayerDataProvider.class, dataProvider = "getValidIdAndEditor")

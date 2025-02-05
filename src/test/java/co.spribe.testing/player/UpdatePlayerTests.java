@@ -2,6 +2,7 @@ package co.spribe.testing.player;
 
 import co.spribe.testing.TestBase;
 import co.spribe.testing.dto.CreatePlayerDTO;
+import io.qameta.allure.Issue;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
@@ -13,6 +14,7 @@ import static io.restassured.RestAssured.when;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+@Issue("Update player doesn't work at all")
 public class UpdatePlayerTests extends TestBase {
 
     @Test

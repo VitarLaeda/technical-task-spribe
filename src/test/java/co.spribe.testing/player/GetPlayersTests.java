@@ -3,6 +3,7 @@ package co.spribe.testing.player;
 import co.spribe.testing.TestBase;
 import co.spribe.testing.dto.CreatePlayerDTO;
 import co.spribe.testing.dto.DeletePlayerRequestDTO;
+import io.qameta.allure.Issue;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
@@ -10,6 +11,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.*;
 
+@Issue("In my opinion get player by ID should be with GET request and probably for authorized users with actual permissions")
 public class GetPlayersTests extends TestBase {
 
     @Test
@@ -20,7 +22,6 @@ public class GetPlayersTests extends TestBase {
 
 
         assertEquals(response.getStatusCode(), 200, "Response code: should be 200");
-
         response.body().jsonPath().getList("players", CreatePlayerDTO.class)
                 .forEach(p -> {
                     assertNotNull(p.getScreenName(), "Screen Name should be present");
