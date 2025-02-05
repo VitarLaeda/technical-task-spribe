@@ -1,0 +1,32 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API Player Tests Suite" verbose="2">
+    <listeners>
+        <listener class-name="co.spribe.testing.listeners.TestNgLifecycleListener"/>
+        <listener class-name="co.spribe.testing.listeners.SuiteListener"/>
+    </listeners>
+    <test name="All Player API Tests">
+        <packages>
+            <package name="co.spribe.testing.player.*" />
+        </packages>
+    </test>
+    <!--<test name="Create player API Tests">
+        <classes>
+            <class name="co.spribe.testing.player.CreatePlayerTests"/>
+        </classes>
+    </test>
+    <test name="Get player API Tests">
+        <classes>
+            <class name="co.spribe.testing.player.GetPlayersTests"/>
+        </classes>
+    </test>
+    <test name="Update player API Tests">
+        <classes>
+            <class name="co.spribe.testing.player.DeletePlayerTests"/>
+        </classes>
+    </test>
+    <test name="Delete player API Tests">
+        <classes>
+            <class name="co.spribe.testing.player.DeletePlayerTests"/>
+        </classes>
+    </test>-->
+</suite>
